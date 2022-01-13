@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 '''PICKGIFTINTENT CLASS HANDLER'''
-class PickGiftHandler(AbstractRequestHandler):
+class GiftAssistantHandler(AbstractRequestHandler):
     
     """First function to be executed after invoking the class, it checks if the current intent is the right intent"""
     def can_handle(self, handler_input):
@@ -26,11 +26,27 @@ class PickGiftHandler(AbstractRequestHandler):
         
     """The second function to be executed, it handles the intent"""
     def handle(self,handler_input):
-        speak_output = "That sounds like fun, what gendre is your cousin ?"
+        slots = handler_input.request_envelope.request.slots
+        relative = slots['Person'].value
+        event = slots['EventType'].value
+        if relative == 'mother':
+            if event == 'birthday':
+                speak_output = 'I think leaving your mother alone is a good idea'
+        elif relative == 'sister':
+            if event == 'birthday':
+                speak_output = 'Have you thought about buying her the latest iphone model ? Give it a thought'
+            elif event == 'wedding':
+                speak_output = 'Moroccans usually choose blankets or a set of tbasel, trust me they help'
+            elif event == 'graduation ceremony':
+                speak_output = 'Now that she graduated buying her a car might be a good idea'
+        else:
+            speak_output = "I don't understand"
         return (
             handler_input.response_builder.speak(speak_output).response
             )
 
+
+'''THE FOLLOWING METHOD GETS EXECUTED WHEN YOU FIRST INVOKE THE SKILL, IT JUST CONFIRMS THE SKILL OPENING'''
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
@@ -40,7 +56,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Welcome, you can say Hello or Help. Which would you like to try?"
+        speak_output = "Gift assistant is opened. Are you thinking of buying a gift ?"
 
         return (
             handler_input.response_builder
@@ -185,7 +201,7 @@ sb = SkillBuilder()
 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
-sb.add_request_handler(PickGiftHandler())
+sb.add_request_handler(GiftAssistantHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())
