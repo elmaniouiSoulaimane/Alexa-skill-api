@@ -17,18 +17,38 @@ from ask_sdk_model import Response
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+'''THE FOLLOWING METHOD GETS EXECUTED WHEN YOU FIRST INVOKE THE SKILL, IT JUST CONFIRMS THE SKILL OPENING'''
+class LaunchRequestHandler(AbstractRequestHandler):
+    """Handler for Skill Launch."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+
+        return ask_utils.is_request_type("LaunchRequest")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speak_output = "Gift assistant is opened. Waiting for commands"
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
+        )
+
 '''PICKGIFTINTENT CLASS HANDLER'''
-class GiftAssistantHandler(AbstractRequestHandler):
+class PickGiftIntentHandler(AbstractRequestHandler):
     
     """First function to be executed after invoking the class, it checks if the current intent is the right intent"""
     def can_handle(self, handler_input):
-        return ask_utils.is_intent_name('pick gift')(handler_input)
+        return ask_utils.is_intent_name('pick_gift')(handler_input)
         
     """The second function to be executed, it handles the intent"""
     def handle(self,handler_input):
-        slots = handler_input.request_envelope.request.slots
-        relative = slots['Person'].value
-        event = slots['EventType'].value
+        slots = handler_input.request_envelope.request.intent.slots
+        relative = slots['relative'].value
+        event = slots['event'].value
+        logger.info("I'm in pick gift")
         if relative == 'mother':
             if event == 'birthday':
                 speak_output = 'I think leaving your mother alone is a good idea'
@@ -40,30 +60,10 @@ class GiftAssistantHandler(AbstractRequestHandler):
             elif event == 'graduation ceremony':
                 speak_output = 'Now that she graduated buying her a car might be a good idea'
         else:
-            speak_output = "I don't understand"
+            speak_output = "I have not prepared for this"
         return (
             handler_input.response_builder.speak(speak_output).response
             )
-
-
-'''THE FOLLOWING METHOD GETS EXECUTED WHEN YOU FIRST INVOKE THE SKILL, IT JUST CONFIRMS THE SKILL OPENING'''
-class LaunchRequestHandler(AbstractRequestHandler):
-    """Handler for Skill Launch."""
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-
-        return ask_utils.is_request_type("LaunchRequest")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        speak_output = "Gift assistant is opened. Are you thinking of buying a gift ?"
-
-        return (
-            handler_input.response_builder
-                .speak(speak_output)
-                .ask(speak_output)
-                .response
-        )
 
 
 class HelloWorldIntentHandler(AbstractRequestHandler):
@@ -200,8 +200,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 sb = SkillBuilder()
 
 sb.add_request_handler(LaunchRequestHandler())
+sb.add_request_handler(PickGiftIntentHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
-sb.add_request_handler(GiftAssistantHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())
