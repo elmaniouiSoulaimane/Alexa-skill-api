@@ -1,0 +1,187 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-viewport-profiles",
+            "version": "1.0.0"
+        },
+        {
+            "name": "alexa-layouts",
+            "version": "1.3.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "height": "100vh",
+                "width": "100vw",
+                "items": [
+                    {
+                        "when": "${@viewportProfile == @hubRoundSmall}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.imageContent.background}"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_1}",
+                                "position": "absolute",
+                                "left": "12vw",
+                                "right": "12vw",
+                                "top": "15vh",
+                                "fontWeight": "900",
+                                "textAlign": "center",
+                                "fontSize": "10vw"
+                            },
+                             {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_2}",
+                                "position": "absolute",
+                                "left": "12vw",
+                                "right": "12vw",
+                                "top": "30vh",
+                                "fontWeight": "900",
+                                "textAlign": "center",
+                                "fontSize": "7vw"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_1}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "position": "absolute",
+                                "align":"center",
+                                "left": "38vh",
+                                "right": "3vw",
+                                "top": "40%"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_2}",
+                                "height": "15vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "42vw",
+                                "top": "68vh"
+                            }
+                        ]
+                    },
+                    {
+                        "when": "${@viewportProfile == @hubLandscapeSmall}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.imageContent.bckg_2}"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_1}",
+                                "position": "absolute",
+                                "left": "5vh",
+                                "top": "5vh",
+                                "fontWeight": "900",
+                                "fontSize": "6vw"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_2}",
+                                "position": "absolute",
+                                "left": "120vh",
+                                "right": "0vw",
+                                "top": "41vh",
+                                "fontSize": "5vw"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_1}",
+                                "height": "60vh",
+                                "width": "50vw",
+                                "align": "right",
+                                "position": "absolute",
+                                "left": "10vh",
+                                "top": "20vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_2}",
+                                "height": "15vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "right": "1vw",
+                                "top": "10vh"
+                            }
+                        ]
+                    },
+                    {
+                        "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.imageContent.bckg_2}"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_1}",
+                                "position": "absolute",
+                                "left": "5vh",
+                                "top": "7vh",
+                                "fontWeight": "900",
+                                "fontSize": "6vw"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.home_2}",
+                                "position": "absolute",
+                                "left": "100vh",
+                                "right": "2vw",
+                                "top": "40vh",
+                                "fontSize": "5vw"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_1}",
+                                "height": "60vh",
+                                "width": "50vw",
+                                "align": "right",
+                                "position": "absolute",
+                                "left": "10vh",
+                                "top": "16vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.imageContent.home_2}",
+                                "height": "15vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "right": "2vw",
+                                "top": "8vh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

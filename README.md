@@ -1,1 +1,3 @@
-# Alexa-game-skill
+# Texas Hold'em Alexa Skill
+
+

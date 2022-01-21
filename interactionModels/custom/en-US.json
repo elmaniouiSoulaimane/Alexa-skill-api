@@ -1,0 +1,161 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "smart poker",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "PerflopIntent",
+          "slots": [],
+          "samples": [
+            "ready",
+            "ready to start",
+            "I am ready"
+          ]
+        },
+        {
+          "name": "AboutUsIntent",
+          "slots": [],
+          "samples": [
+            "tell me about you",
+            "give me informations about you",
+            "About us"
+          ]
+        },
+        {
+          "name": "RaiseIntent",
+          "slots": [
+            {
+              "name": "raiseValue",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "add {raiseValue}",
+            "I want add {raiseValue}",
+            "I raise {raiseValue}"
+          ]
+        },
+        {
+          "name": "FoldIntent",
+          "slots": [],
+          "samples": [
+            "fail",
+            "i want fold",
+            "I fold "
+          ]
+        },
+        {
+          "name": "CallIntent",
+          "slots": [],
+          "samples": [
+            "call",
+            "I call "
+          ]
+        },
+        {
+          "name": "MyInfoIntent",
+          "slots": [],
+          "samples": [
+            "tell me",
+            "all informations about me",
+            "give me my informations",
+            "tell me about me "
+          ]
+        },
+        {
+          "name": "CloseIntent",
+          "slots": [],
+          "samples": [
+            "No",
+            "I can not keep going",
+            "I don\u0027t have time",
+            "see you next time",
+            "close the application please",
+            "I\u0027m tired",
+            "close the apps"
+          ]
+        },
+        {
+          "name": "CheckIntent",
+          "slots": [],
+          "samples": [
+            "Check"
+          ]
+        },
+        {
+          "name": "GetPositionIntent",
+          "slots": [],
+          "samples": [
+            "my index",
+            "what is my position",
+            "my position please",
+            "get my position"
+          ]
+        },
+        {
+          "name": "GetHoleCardsIntent",
+          "slots": [],
+          "samples": [
+            "what is my hole cards",
+            "give me my hole cards",
+            "Hole cards"
+          ]
+        },
+        {
+          "name": "GetCommunityCardsIntent",
+          "slots": [],
+          "samples": [
+            "community cards",
+            "flop cards",
+            "what is flop cards exists"
+          ]
+        },
+        {
+          "name": "ReplayIntent",
+          "slots": [],
+          "samples": [
+            "restart",
+            "replay"
+          ]
+        },
+        {
+          "name": "YesIntent",
+          "slots": [],
+          "samples": [
+            "yes"
+          ]
+        },
+        {
+          "name": "CurrentSituationIntent",
+          "slots": [],
+          "samples": [
+            "current situation",
+            "what is the current situation"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "6"
+}

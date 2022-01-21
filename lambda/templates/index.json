@@ -1,0 +1,763 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-viewport-profiles",
+            "version": "1.0.0"
+        },
+        {
+            "name": "alexa-layouts",
+            "version": "1.3.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "height": "100vh",
+                "width": "100vw",
+                "items": [
+                     {
+                        "when": "${@viewportProfile == @hubRoundSmall}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.bkgd_3}"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.winText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "color":"red",
+                                "position": "absolute",
+                                "left": "35vh",
+                                "top": "10vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.potText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "35vh",
+                                "top": "20vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "10vh",
+                                "top": "35vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "25vh",
+                                "top": "35vh"
+                            },
+                          	{
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop3}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "40vh",
+                                "top": "35vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.turn}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "55vh",
+                                "top": "35vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.river}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "70vh",
+                                "top": "35vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.me}",
+                                "height": "15vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "45vh",
+                                "top": "59vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.myhole1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "37vh",
+                                "top": "76vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.myhole2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "52vh",
+                                "top": "76vh"
+                            }
+                        ]
+                    },
+                        {
+                        "when": "${@viewportProfile == @hubLandscapeSmall}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.bkgd_3}"
+                            },
+                             {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.winText.text}",
+                                "height": "30vh",
+                                "fontFamily":"cursive",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "80vh",
+                                "color":"red",
+                                "top": "4vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.potText.text}",
+                                "height": "30vh",
+                                "fontFamily":"cursive",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "80vh",
+                                "top": "15vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "50vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "65vh",
+                                "top": "27vh"
+                            },
+                          	{
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop3}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "80vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.turn}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "95vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.river}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "110vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.position4Text.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "fontSize":"20",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "80vh",
+                                "top": "72vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar4}",
+                                "height": "18vh",
+                                "width": "18vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "76vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole7}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "75vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole8}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "90vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.position5Text.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "16vh",
+                                "top": "70vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar5}",
+                                "height": "18vh",
+                                "width": "18vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "14vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole9}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "10vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole10}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "25vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.bigText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "139vh",
+                                "top": "70vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar3}",
+                                "height": "18vh",
+                                "width": "18vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "136vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole5}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "135vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole6}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "150vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar2}",
+                                "height": "18vh",
+                                "width": "18vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "136vh",
+                                "top": "2vh"
+                            },
+                           {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.smallText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "139vh",
+                                "top": "20vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole3}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "135vh",
+                                "top": "27vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole4}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "150vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.delearText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "fontSize":"20",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "16vh",
+                                "top": "20vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "10vh",
+                                "top": "27vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "25vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.dealer_c}",
+                                "height": "5vh",
+                                "width": "5vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "17vh",
+                                "top": "15vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar1}",
+                                "height": "18vh",
+                                "width": "18vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "14vh",
+                                "top": "2vh"
+                            }
+                        ]
+                    },
+                    {
+                        "when":"{@viewportProfile == @hubLandscapeMedium || @viewportProfile == @tvLandscapeXLarge}",
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "type": "AlexaBackground",
+                                "backgroundImageSource": "${payload.headlineTemplateData.properties.bkgd_3}"
+                            },
+                             {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.winText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "color":"red",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "60vh",
+                                "top": "4vh"
+                            },
+                           {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.potText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "40vw",
+                                "fontSize":"35",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "60vh",
+                                "top": "15vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "35vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "50vh",
+                                "top": "27vh"
+                            },
+                          	{
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.flop3}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "65vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.turn}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "80vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.river}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "95vh",
+                                "top": "27vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.position4Text.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "fontSize":"20",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "60vh",
+                                "top": "70vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar4}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "57vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole7}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "55vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole8}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "70vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.position5Text.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "6vh",
+                                "top": "70vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar5}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "6vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole9}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "0vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole10}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "15vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.bigText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "124vh",
+                                "top": "70vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar3}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "122vh",
+                                "top": "50vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole5}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "120vh",
+                                "top": "78vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole6}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "135vh",
+                                "top": "78vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar2}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "122vh",
+                                "top": "2vh"
+                            },
+                           {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.smallText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "align": "center",
+                                "fontSize":"20",
+                                "position": "absolute",
+                                "left": "124vh",
+                                "top": "20vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole3}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "120vh",
+                                "top": "27vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole4}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "135vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${payload.headlineTemplateData.properties.textContent.delearText.text}",
+                                "fontFamily":"cursive",
+                                "height": "30vh",
+                                "width": "30vw",
+                                "fontSize":"20",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "6vh",
+                                "top": "20vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole1}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "0vh",
+                                "top": "27vh"
+                            },
+                           {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.hole2}",
+                                "height": "20vh",
+                                "width": "15vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "15vh",
+                                "top": "27vh"
+                            },
+                            {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.dealer_c}",
+                                "height": "5vh",
+                                "width": "5vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "27vh",
+                                "top": "15vh"
+                            },
+                          {
+                                "type": "Image",
+                                "source": "${payload.headlineTemplateData.properties.avatar1}",
+                                "height": "20vh",
+                                "width": "20vw",
+                                "align": "center",
+                                "position": "absolute",
+                                "left": "4vh",
+                                "top": "2vh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
