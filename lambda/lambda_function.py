@@ -17,6 +17,8 @@ from apl_helpers import apl_current, apl_current_win, apl_info, apl_about, apl_h
 from ask_sdk.standard import StandardSkillBuilder
 from ask_sdk_model import Response
 
+from interfaces import interfaces
+interfaces = interfaces()
 sb = StandardSkillBuilder()
 
 players = []
@@ -48,14 +50,15 @@ class LaunchRequestHandler(AbstractRequestHandler):
         sessionAttributes["lastaction"] = None
         sessionAttributes["last_output"] = "Say 'ready' to start playing. "
         
-        if get_supported_interfaces(handler_input).alexa_presentation_apl is not None:
+        interfaces.displayContent(handler_input)
+        '''if get_supported_interfaces(handler_input).alexa_presentation_apl is not None:
             handler_input.response_builder.add_directive(
                 RenderDocumentDirective(
                     token="homeToken",
                     document=_load_apl_document("./templates/home.json"),
                     datasources = apl_home()
                 )
-            )
+            )'''
         handler_input.response_builder.set_should_end_session(False)
         return handler_input.response_builder.speak(speak_output).ask(speak_output).response
 
